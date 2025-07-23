@@ -3,7 +3,12 @@ const config = {
 	images: {
 		remotePatterns: [
 			{
-				hostname: "*",
+				protocol: 'https',
+				hostname: '**',
+			},
+			{
+				protocol: 'http',
+				hostname: '**',
 			},
 		],
 	},
