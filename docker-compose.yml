@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   saleor-storefront:
     container_name: saleor-storefront
@@ -17,6 +15,11 @@ services:
       - saleor_network
     env_file:
       - .env
+    environment:
+      - NEXT_PUBLIC_SALEOR_API_URL=${NEXT_PUBLIC_SALEOR_API_URL}
+      - SALEOR_API_URL=http://host.docker.internal:8000/graphql/
+      - AUTO_DETECT_API=false
+
 
   # Add more containers below (nginx, postgres, etc.)
 
